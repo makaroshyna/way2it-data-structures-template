@@ -14,7 +14,18 @@ public class LinkedList {
 
     // Should add new value to the end of the list and increment length
     public void add(String value) {
-        // TODO implement me
+        Node node = new Node();
+        node.value = value;
+        if (head == null) {
+            head = node;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = node;
+        }
+        length++;
     }
 
     // Should add new value next to specified afterValue, increment length and return true
