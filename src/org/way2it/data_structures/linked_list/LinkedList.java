@@ -37,7 +37,13 @@ public class LinkedList {
 
     // Should return true if value exists in this list, false - otherwise
     public boolean contains(String value) {
-        // TODO implement me
+        Node current = head;
+        while (current != null) {
+           if (current.value.equals(value)) {
+               return true;
+           }
+           current = current.next;
+        }
         return false;
     }
 
