@@ -31,7 +31,18 @@ public class LinkedList {
     // Should add new value next to specified afterValue, increment length and return true
     // If afterValue is not present in list - do nothing and return false.
     public boolean addAfter(String value, String afterValue) {
-        // TODO implement me
+        Node current = head;
+        Node node = new Node();
+        node.value = value;
+        while (current != null) {
+            if (current.value.equals(afterValue)) {
+                node.next = current.next;
+                current.next = node;
+                length++;
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
