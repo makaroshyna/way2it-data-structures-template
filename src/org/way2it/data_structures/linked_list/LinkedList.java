@@ -61,7 +61,20 @@ public class LinkedList {
     // Should remove first occurrence of the specified value from this list and decrement the length
     // If value existed and was removed - return true, false - otherwise
     public boolean remove(String value) {
-        // TODO implement me
+        if (head != null && head.value.equals(value)) {
+            head = head.next;
+            length--;
+            return true;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.value.equals(value)) {
+                current.next = current.next.next;
+                length--;
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
